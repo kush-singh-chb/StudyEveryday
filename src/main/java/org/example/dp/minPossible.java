@@ -46,9 +46,9 @@ public class minPossible {
         }
 
         for (int target = 1; target <= amount; target++) {
-            for (int c = 0; c < coins.length; c++) {
-                if (target - coins[c] >= 0 && dp[target - coins[c]] != Integer.MAX_VALUE)
-                    dp[target] = Math.min(dp[target], 1 + dp[target - coins[c]]);
+            for (int coin : coins) {
+                if (target - coin >= 0 && dp[target - coin] != Integer.MAX_VALUE)
+                    dp[target] = Math.min(dp[target], 1 + dp[target - coin]);
             }
         }
 
